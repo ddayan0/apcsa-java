@@ -1,3 +1,6 @@
+// Dennis Dayan
+// AP CSA
+
 import java.util.*;
 import java.lang.*;
 
@@ -11,7 +14,7 @@ public class arrayProj {
         String cats [] = {"Movies", "Cars", "People", "Slogans"};
         // get a phrase and then cat from it
         //sout category, store phrase
-        int max = 4;
+        int max = 3;
         int min = 0;
         int range = max - min + 1;
         int rand = (int)(Math.random() * range) + min;
@@ -33,55 +36,73 @@ public class arrayProj {
             phrase = bankfour[rand];
             catstr = cats[3];
         }
-
-        int points [] = {0, 50, 100, 150, 200};
+        int points [] = {25, 50, 100, 150, 200};
+        int userpoints = 0;
         System.out.println("Welcome to Wheel of Fortune!");
         System.out.println("Choose an Option");
-        System.out.println("1: Quit, 2: Spin, 3: Solve");
+        System.out.println("1: Quit, 2: Spin, 3: Solve, 4: Print Points");
         Scanner menub = new Scanner(System.in);
         int option = menub.nextInt();
-        while(option < 4 && option >= 1) {
+        int tries = 0;
+        while(tries == 0) {
             if (option == 1) {
-                System.exit(0);
+                break;
             }
             if (option == 2) {
-                System.out.println("Your category is: " + catstr);
-                // body
-                //if()
+                System.out.println("Your category is: Cars");
+                String phrase1 = "Bugatti Veyron";
+                String phrase1Arr [] = {"B", "u", "g", "a","t", "t", "i", " ", "V", "e", "y", "r", "o", "n"};
+                String phrase1Gs [] = {"_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_"};
+                Scanner op2guess = new Scanner(System.in);
+                String userguess = op2guess.nextLine();
+                for(int i = 0; i < phrase1Arr.length; i++){
+                    if(phrase1Arr[i].equalsIgnoreCase(userguess)){
+                        userpoints += points[rand]; //put this into method
+                        phrase1Gs[i] = userguess;   // create a method for storing new guessarray
+                        for(String s: phrase1Gs){
+                            System.out.print(s + " ");
+                        }
+                    }
+
+                }
+
+
+
+
+
+
+
+
+
 
 
             }
             if (option == 3) {
-                int tries = 0;
-                while (tries < 3) {
-                    System.out.println("Your category is: " + catstr);
-                    Scanner option3 = new Scanner(System.in);
-                    String solveanswer;
-                    solveanswer = option3.nextLine();
-                    if (solveanswer.equals(phrase)) {
-                        System.out.println("You Won!");
-                        System.out.println("You have: " + points[rand]);
-                        System.exit(0);
-                    }
-                    else {
-                        tries = tries + 1;
-                        System.out.println("Try Again");
-                        if(tries > 3){
-                            break;
-                        }
-
-                    }
-
-
-
+                //int rand2 = (int)(Math.random() * range) + min;
+                //int rand3 = (int)(Math.random() * range) + min;
+                System.out.println("Your category is: " + catstr);
+                Scanner option3 = new Scanner(System.in);
+                String solveanswer;
+                solveanswer = option3.nextLine();
+                if (solveanswer.equals(phrase)) {
+                    userpoints = points[rand];
+                    System.out.println("You Won!");
+                    System.out.println("You have: " + userpoints + " Points!");
+                    wheeloffotune();
+                }
+                else {
+                    userpoints = 0;
+                    System.out.println("You Guessed Incorrectly! You Now Have: " + userpoints + " Points!");
+                    wheeloffotune();
                 }
             }
-        } //end option while
-
-
-
-
-    } //end static void
+            if(option == 4){
+                System.out.println(userpoints);
+                wheeloffotune();
+            }
+        }
+    } //end option while
+    //end static void
     static boolean isContains(String [] arr, String [] arr2, String [] arr3, String [] arr4, String target){
         for(int i = 0; i < arr.length; i++){
             for(int j = 0; j < arr2.length; j++){
@@ -105,7 +126,6 @@ public class arrayProj {
         }
         return false;
     }//end static void
-
     public static void main(String[] args) {
         wheeloffotune();
     }
