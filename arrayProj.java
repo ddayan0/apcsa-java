@@ -115,7 +115,7 @@ public class arrayProj {
             if (option == 3) {
                 //int rand2 = (int)(Math.random() * range) + min;
                 //int rand3 = (int)(Math.random() * range) + min;
-                System.out.println("Your category is: " + catstr);
+                System.out.println("Your category is: " + catstr); //START REMOVE
                 Scanner option3 = new Scanner(System.in);
                 String solveanswer = option3.nextLine();
                 if (solveanswer.equals(phrase)) {
@@ -156,7 +156,7 @@ public class arrayProj {
                     System.out.println("You Guessed Incorrectly! You Now Have: " + userpoints + " Points!");
                     wheeloffotune();
                 }
-            }
+            }//END REMOVE
             if(option == 4){
                 System.out.println(userpoints);
                 wheeloffotune();
