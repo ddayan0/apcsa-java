@@ -1,7 +1,7 @@
 // Dennis Dayan
 // Mr. Watson
 // AP Comp Sci A
-// 13 December 2019 (so far)
+// 17 December 2019 (so far)
 // stringsProj.java
 
 // the new age must come
@@ -40,28 +40,65 @@
 // thats just a little mean
 
 
+import java.util.Arrays;
 
 // Python > C > Java
 public class stringsProj {
 
     static void line(){ //line function for organization
-        System.out.println("-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_"); //ooooo fancy
+        System.out.println("_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_"); //ooooo fancy
     } //end line()
 
     static void formatName(String target){ //method for miniProj #4
-        
+        int commaindex = target.indexOf(",");
+        String lastname = target.substring(0, commaindex);
+        String firstname = target.substring(commaindex + 2);
+        System.out.println(firstname + " " + lastname);
     }//end formatName()
 
     static void howManyMultiples(String target){ //method for miniProj #6
+        String [] targetArray = new String[target.length()];
+        int freq = 0;
+        for(int i = 0; i < target.length(); i++){
+            targetArray[i] = target.substring(i, i+1);
+        }
+        for(int i =0; i < targetArray.length; i++){
+            for(int j = 0; j < targetArray.length; j++){
+                if(targetArray[i].equals(targetArray[j])){
+                    break; //finish this?
+                    // maybe do sams method of individual letters
+                    //screw stupid string arrays?
+                }
+            }
+        }
+
 
     }//end howManyMultiples()
 
     static void reverseEach(String target){ //method for miniProj #5
 
+
+
+
+
+
+
     }//end reverseEach()
+
+    //below are arrays useful to the program itself, these are not made to satisfy specific requirements
+//    static void stringtoArr(String target){
+//        for(int i = 0; i < target.length(); i++){
+//            String [] genArray = new String[i];
+//        }
+//    }
 
     public static void main(String[] args) { //main method (obviously)
         line(); // calls line function
+        formatName("O'Reilly, Bill"); //formatName function
+        line();
+        howManyMultiples("guuw");
+
+
     } //end psvm()
 
 
