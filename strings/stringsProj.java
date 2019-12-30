@@ -14,6 +14,9 @@
 //        Make sure to handle spaces and apostrophes
 //        Eg: von Neumann, John => John von Neumann
 //        Eg: O'Reilly, Bill => Bill O'Reilly
+// DONE!
+
+
 
 // TODO Mini Proj #6 (12 pts)
 //        How Many Multiples?
@@ -23,7 +26,7 @@
 //        l appears 3 times
 //        o appears 2 times
 //        If there are no multiples, print an error message to the user
-//
+// IN PROGRESS
 
 // TODO Mini Proj #5 (12 pts)
 //        Reverse Each
@@ -76,13 +79,25 @@ public class stringsProj {
     }//end howManyMultiples()
 
     static void reverseEach(String target){ //method for miniProj #5
-
-
-
-
-
-
-
+	    String[] words = target.split(" ");
+	    String revStr = "";
+	    for (int i = 0; i < words.length; i++){
+	    	String word = words[i];
+		String revWrd = "";
+		for(int x = word.length()-1; x >= 0; x--){
+			revWrd = revWrd + word.charAt(x);
+		
+		}
+		revStr = revStr + revWrd + " ";
+		int targlen = target.length()+1;
+		int strlen = revStr.length();
+		if(targlen == strlen){
+			System.out.println(revStr);
+		
+		}		
+		
+	    
+	    }
     }//end reverseEach()
 
     //below are arrays useful to the program itself, these are not made to satisfy specific requirements
@@ -96,8 +111,9 @@ public class stringsProj {
         line(); // calls line function
         formatName("O'Reilly, Bill"); //formatName function
         line();
-        howManyMultiples("guuw");
-
+        //howManyMultiples("guuw");
+	reverseEach("The quick brown fox jumped over the lazy dog!");
+	line();
 
     } //end psvm()
 
