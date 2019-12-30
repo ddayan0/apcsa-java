@@ -44,6 +44,7 @@
 
 
 import java.util.Arrays;
+import java.util.regex.*;
 
 // Python > C > Java
 public class stringsProj {
@@ -60,21 +61,13 @@ public class stringsProj {
     }//end formatName()
 
     static void howManyMultiples(String target){ //method for miniProj #6
-        String [] targetArray = new String[target.length()];
-        int freq = 0;
-        for(int i = 0; i < target.length(); i++){
-            targetArray[i] = target.substring(i, i+1);
-        }
-        for(int i =0; i < targetArray.length; i++){
-            for(int j = 0; j < targetArray.length; j++){
-                if(targetArray[i].equals(targetArray[j])){
-                    break; //finish this?
-                    // maybe do sams method of individual letters
-                    //screw stupid string arrays?
-                }
-            }
-        }
-
+	Pattern a = Pattern.compile("a");
+	Matcher amatch = a.matcher(target);
+	int acount = 0;
+	while (amatch.find()){
+		acount++;
+	}
+	System.out.println(acount);	
 
     }//end howManyMultiples()
 
@@ -111,7 +104,8 @@ public class stringsProj {
         line(); // calls line function
         formatName("O'Reilly, Bill"); //formatName function
         line();
-        //howManyMultiples("guuw");
+        howManyMultiples("gaga");
+	line();
 	reverseEach("The quick brown fox jumped over the lazy dog!");
 	line();
 
