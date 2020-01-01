@@ -26,7 +26,7 @@
 //        l appears 3 times
 //        o appears 2 times
 //        If there are no multiples, print an error message to the user
-// IN PROGRESS
+// DONE!
 
 // TODO Mini Proj #5 (12 pts)
 //        Reverse Each
@@ -36,6 +36,7 @@
 //        Must handle punctuation, special characters, and spacing appropriately
 //        Eg: “The quick brown fox jumped over the lazy dog!”
 //        ehT kciuq nworb xof depmuj revo eht yza'l !god
+// DONE!
 
 // ok first of all, why do we have to do all the hard ones for full credit?
 // i mean ok, i guess you want to challenge us and motivate us to challenge ourselves
