@@ -43,8 +43,8 @@
 // thats just a little mean
 
 
-import java.util.Arrays;
-import java.util.regex.*;
+import java.util.Arrays; //for array functionality
+import java.util.regex.*; // regex for HowManyMultiples
 
 // Python > C > Java
 public class stringsProj {
@@ -54,25 +54,25 @@ public class stringsProj {
     } //end line()
 
     static void formatName(String target){ //method for miniProj #4
-        int commaindex = target.indexOf(",");
-        String lastname = target.substring(0, commaindex);
-        String firstname = target.substring(commaindex + 2);
-        System.out.println(firstname + " " + lastname);
+        int commaindex = target.indexOf(","); //gets index of comma for splicing
+        String lastname = target.substring(0, commaindex); // retrives lastname up to comma
+        String firstname = target.substring(commaindex + 2); // gets rest of name from comma
+        System.out.println(firstname + " " + lastname); //prints formatted name
     }//end formatName()
 
     static void howManyMultiples(String target){ //method for miniProj #6
-	    	String newTarg = target.toLowerCase();
-		Pattern a = Pattern.compile("a");
-		Matcher amatch = a.matcher(newTarg);
-		int acount = 0;
-		while (amatch.find()){
-			acount++;
+	    	String newTarg = target.toLowerCase(); // sets user supplied target to lowercase for ease
+		Pattern a = Pattern.compile("a"); // compiles a pattern for the regex to loook for
+		Matcher amatch = a.matcher(newTarg); // creates matcher object
+		int acount = 0; // inits count of letters to zero
+		while (amatch.find()){ // while the matcher object is looking for the pattern 
+			acount++; // add 1 to count of letters if it finds it
 		}
-		if(acount <= 1){
-			System.out.println("");
+		if(acount <= 1){ // if the count is less than or equal to one
+			System.out.println(""); // just print a blank
 		}
 		else{
-			System.out.println("A is found " + acount + " Times");
+			System.out.println("A is found " + acount + " Times"); //prints count THIS IS DONE FOR THE REST OF THE ALPHABET
 		}
 		Pattern b = Pattern.compile("b");
 		Matcher bmatch = b.matcher(newTarg);
@@ -377,19 +377,19 @@ public class stringsProj {
     }//end howManyMultiples()
 
     static void reverseEach(String target){ //method for miniProj #5
-	String[] words = target.split(" ");
-	String revStr = "";
-	for (int i = 0; i < words.length; i++){
-		String word = words[i];
-		String revWrd = "";
-		for(int x = word.length()-1; x >= 0; x--){
-			revWrd = revWrd + word.charAt(x);
+	String[] words = target.split(" "); //splits spaces between each word in the sentence to reverse
+	String revStr = ""; // inits empty string to be filled later
+	for (int i = 0; i < words.length; i++){ //for:
+		String word = words[i]; // sets string object of word to index of string array words for the reversal
+		String revWrd = ""; // inits empty string to be filled later
+		for(int x = word.length()-1; x >= 0; x--){ //for:
+			revWrd = revWrd + word.charAt(x); // sets reverse word to the emp string + the string array at char index of x
 		}
-		revStr = revStr + revWrd + " ";
-		int targlen = target.length()+1;
-		int strlen = revStr.length();
-		if(targlen == strlen){
-			System.out.println(revStr);
+		revStr = revStr + revWrd + " "; // actually sets reverse string
+		int targlen = target.length()+1; //gets length of target string
+		int strlen = revStr.length(); // gets length of the reverse string
+		if(targlen == strlen){ // if they both equal
+			System.out.println(revStr); // then only print out the final reversed string
 		
 		}		
 	    }
@@ -406,9 +406,9 @@ public class stringsProj {
         line(); // calls line function
         formatName("O'Reilly, Bill"); //formatName function
         line();
-        howManyMultiples("Impossible");
+        howManyMultiples("Impossible"); // howManyMultiples
 	line();
-	reverseEach("The quick brown fox jumped over the lazy dog!");
+	reverseEach("The quick brown fox jumped over the lazy dog!"); //reverseEach
 	line();
 
     } //end psvm()
