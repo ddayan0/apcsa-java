@@ -44,8 +44,6 @@
 // thats just a little mean
 
 
-import javax.sound.midi.Soundbank;
-import java.sql.SQLOutput;
 
 // Python > C > Java
 public class stringsProj {
@@ -63,23 +61,23 @@ public class stringsProj {
 
     static void howManyMultiples(String target){ //method for miniProj #6
         // AAAAHHHHHHHH WHY MUST THIS BE!
-        String comptarg = target.toLowerCase();
-        int strlen = comptarg.length();
-        int diff =0;
-        for(int i = 0; i < strlen; i++){
-            diff = removeLetter(target, target.substring(i, i+1)).length();
-            if((strlen - diff)!= 1){
-                System.out.println(target.substring(i, i+1)+" Repeats "+ (strlen - diff) + " times.");
+        String comptarg = target.toLowerCase();//sets target to lowercase, maybe unused?
+        int strlen = comptarg.length(); // gets length of string
+        int diff =0; // inits diff to 0
+        for(int i = 0; i < strlen; i++){ //for:
+            diff = removeLetter(target, target.substring(i, i+1)).length();//gets diff using removeLetter method and substring
+            if((strlen - diff)!= 1){ //if the letters are the same
+                System.out.println(target.substring(i, i+1)+" Repeats "+ (strlen - diff) + " times."); //print nice message
             }
         }
     }//end howManyMultiples()
 
     static String  removeLetter(String target, String toRemove){
-        String newStr = "";
-        for(int i = 0; i < target.length(); i++){
-            newStr = target.replace(toRemove, "");
+        String newStr = ""; // inits empty string to fill
+        for(int i = 0; i < target.length(); i++){ // for:
+            newStr = target.replace(toRemove, ""); // removes arg in string
         }
-        return newStr;
+        return newStr; //returns
 
     }
     static void reverseEach(String target){ //method for miniProj #5
