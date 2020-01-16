@@ -1,4 +1,9 @@
-import java.util.SplittableRandom;
+// Dennis Dayan
+// AP CS A
+
+
+// when will eccojams v2 come out?
+// the world may never know
 
 public class methods1 {
     static void line(){
@@ -93,6 +98,18 @@ public class methods1 {
         }
         return -1;
     }
+
+    static int maxNum(int [] arr){
+        int max = Integer.MIN_VALUE;
+        for(int s: arr){
+            if(s > max){
+                max = s;
+            }
+        }
+        return max;
+    }
+
+
     static String sortArray(String [] arr){
         if(arr.length >= 2){
             String [] left = new String[arr.length / 2];
@@ -146,13 +163,6 @@ public class methods1 {
         }
         return -1;
     }
-
-
-
-
-
-
-
     public static void main(String[] args) {
         hellWorldVoid();
         line();
@@ -200,7 +210,9 @@ public class methods1 {
             System.out.println(output);
         }
         line();
-        
+        System.out.println(maxNum(myArrayInt));
+        line();
+
 
 
 
