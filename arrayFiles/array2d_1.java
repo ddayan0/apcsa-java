@@ -4,7 +4,7 @@
 // although, they are significantly older so java has no excuse
 public class array2d_1 {
     static void line(){
-        System.out.println("-------------------");
+        System.out.println("&*&*&*&*&*&*&*&*&*&*&*&*&");
     }
     static void fillEven(int[][] array){
         for(int row = 0; row < array.length; row++){
@@ -23,7 +23,7 @@ public class array2d_1 {
     static void fillDash(String[][] array){
         for(int row = 0; row < array.length; row++){
             for(int col = 0; col < array[row].length; col++){
-                array[row][col] = "-";
+                array[row][col] = "------";
             }
         }
     }
@@ -31,6 +31,16 @@ public class array2d_1 {
         for(int row = 0; row < array.length; row++){
             for(int col = 0; col < array[row].length; col++){
                 if(array[row][col] == targ){
+                    System.out.println(array[row][col] + "\t");
+                    System.out.println("Found at " + row + " " + col);
+                }
+            }
+        }
+    }
+    static void findIndex(String[][] array, String targ){
+        for(int row = 0; row < array.length; row++){
+            for(int col = 0; col < array[row].length; col++){
+                if(array[row][col].equals(targ)){
                     System.out.println(array[row][col] + "\t");
                     System.out.println("Found at " + row + " " + col);
                 }
@@ -80,18 +90,19 @@ public class array2d_1 {
         printArray(dashArray);
         //part 4
         line();
-        
-
-
-
-
-
-
-
-
-
+        String [][] classroom = new String[4][6];
+        fillDash(classroom);
+        classroom[1][1] = "Orean";
+        classroom[1][2] = "Nick";
+        classroom[1][3] = "Sam  ";
+        classroom[1][3] = "Sam  ";
+        classroom[2][3] = "Dennis";
+        classroom[2][4] = "Max  ";
+        classroom[2][5] = "Cole";
+        printArray(classroom);
+        line();
+        findIndex(classroom, "Dennis");
+        line();
+        //THE END!
     }
-
-
 }
-
