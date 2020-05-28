@@ -1,8 +1,4 @@
 # apcsa-java
+## AT REQUEST, THIS REPOSITORY IS NO LONGER BEING UPDATED WITH ANY CODE WHATSOEVER
 Applications made for my AP Computer Science A course.
 
-
-- beware of spaghetti code!
-- please do not rip my code off
-
-*"This is so stupid" - sam* 
